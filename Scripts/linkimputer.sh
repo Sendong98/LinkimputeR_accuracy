@@ -21,7 +21,7 @@ bcftools view -S ^downsample_id_true.txt chromsome1_selected_site_biallellic.vcf
 bcftools index chromsome1_selected_site_biallellic_other.vcf.gz
 
 #add 10% missing values to high coverage samples
-bcftools +setGT chromsome1_selected_site_biallellic_22_high.vcf.gz -Oz -- -t r:0.1 -n . -o chromsome1_selected_site_biallellic_22_high_missing10.vcf.gz
+bcftools +setGT chromsome1_selected_site_biallellic_22_high.vcf.gz -Oz -o chromsome1_selected_site_biallellic_22_high_missing10.vcf.gz -- -t r:0.1 -n .
 bcftools index chromsome1_selected_site_biallellic_22_high_missing10.vcf.gz
 
 #merge missing part and rest
