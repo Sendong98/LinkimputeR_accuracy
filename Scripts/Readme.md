@@ -10,6 +10,10 @@ Mask 10% proportion of missing genotypes, only one file to be generated
 
 `bcftools view chr1_missing10.m1.vcf -Oz -o chr1_missing10.m1.vcf.gz`
 
+Imputation
+
+`java -Xmx200G -jar LinkImputeR.jar -s accuracy.ini`
+
 Check the discordance
 
 `Rscript Imputeqc.R`
