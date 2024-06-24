@@ -1,6 +1,6 @@
-#Methods
+# Methods
 
-##Method 1: imputeqc
+## Method 1: imputeqc
 
 imputedqc package provides masking and accuracy checking function
 
@@ -13,4 +13,4 @@ Check the discordance
 
 `Rscript Imputeqc.R`
 
-##Method 2: linkimputer.sh
+## Method 2: linkimputer.sh
