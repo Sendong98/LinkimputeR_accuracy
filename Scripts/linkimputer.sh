@@ -11,13 +11,13 @@
 #SBATCH --mail-user=s.dong@rug.nl
 
 #select high coverage samples
-bcftools view -S ../../LinkImputeR/downsample_id_true.txt chromsome1_selected_site_biallellic.vcf.gz -Oz -o chromsome1_selected_site_biallellic_22_high.vcf.gz
+bcftools view -S downsample_id_true.txt chromsome1_selected_site_biallellic.vcf.gz -Oz -o chromsome1_selected_site_biallellic_22_high.vcf.gz
 
 #the rest samples
-bcftools view -S ^../../LinkImputeR/downsample_id_true.txt chromsome1_selected_site_biallellic.vcf.gz -Oz -o chromsome1_selected_site_biallellic_other.vcf.gz
+bcftools view -S ^downsample_id_true.txt chromsome1_selected_site_biallellic.vcf.gz -Oz -o chromsome1_selected_site_biallellic_other.vcf.gz
 
 #add 10% missing values to high coverage samples
-bcftools +setGT chromsome1_selected_site_biallellic.vcf.gz -Oz -- -t r:0.1 -n . -o test.vcf.gz
+bcftools +setGT chromsome1_selected_site_biallellic_22_high.vcf.gz -Oz -- -t r:0.1 -n . -o chromsome1_selected_site_biallellic_22_high_missing10.vcf.gz
 
 #merge missing part and rest
 bcftools merge chromsome1_selected_site_biallellic_22_high_missing10.vcf.gz chromsome1_selected_site_biallellic_other.vcf.gz -Oz -o chromsome1_selected_site_biallellic_with_22_missing10.vcf.gz
@@ -25,4 +25,8 @@ bcftools merge chromsome1_selected_site_biallellic_22_high_missing10.vcf.gz chro
 #using linkimputer to perform imputation
 java -Xmx200G -jar LinkImputeR.jar -s accuracy.ini
 
+#Subset high coverage samples to compare
+bcftools view -S downsample_id_true.txt chromsome1_selected_site_biallellic_with_22_missing10_imputed.vcf.gz -Oz -o chromsome1_selected_site_biallellic_with_22_missing10_imputed_high.vcf.gz
+
 #check accuracy
+
