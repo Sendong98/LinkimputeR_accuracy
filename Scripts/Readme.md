@@ -10,7 +10,7 @@ imputedqc package provides masking and accuracy checking function
 
 `bcftools view chr1_missing10.m1.vcf -Oz -o chr1_missing10.m1.vcf.gz`
 
-### Imputation
+### Imputation ([manual](https://vcru.wisc.edu/simonlab/bioinformatics/programs/linkimpute/UserGuide.pdf))
 
 `java -Xmx200G -jar LinkImputeR.jar -s accuracy.ini`
 
