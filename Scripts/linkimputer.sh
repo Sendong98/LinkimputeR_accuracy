@@ -3,10 +3,10 @@
 #SBATCH --partition=regularlo
 #SBATCH --nodes=1
 #SBATCH --time=80:00:00
-#SBATCH --ntasks-per-node=2
+#SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=4
-#SBATCH --mem-per-cpu=30G
-#SBATCH --output=Impute-%j.log
+#SBATCH --mem-per-cpu=10G
+#SBATCH --output=Linkimputer-%j.log
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=s.dong@rug.nl
 
