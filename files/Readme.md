@@ -6,3 +6,5 @@ LinkimputeR profile file: accuracy.ini
 
 LinkimputeR jar file: LinkImputeR.jar
 
+downsample_id_true.txt: including 22 top coverage sample list
+
