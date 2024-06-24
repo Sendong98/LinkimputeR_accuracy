@@ -1,5 +1,7 @@
 #Methods
+
 ##Method 1: imputeqc
+
 imputedqc package provides masking and accuracy checking function
 
 Mask 10% proportion of missing genotypes, only one file to be generated
